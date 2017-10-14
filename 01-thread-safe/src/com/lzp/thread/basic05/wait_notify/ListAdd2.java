@@ -3,10 +3,7 @@ package com.lzp.thread.basic05.wait_notify;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
-/**
- * @author alienware
- *
- */
+
 public class ListAdd2 {
 	private volatile static List list = new ArrayList();	
 	

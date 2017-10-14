@@ -23,13 +23,13 @@ public class MyThread04 {
 	}
 
 	// synchronized
-	public void getValue(){
+	public synchronized void getValue(){
 		System.out.println("getValue方法得到：username = " + this.username + " , password = " + this.password);
 	}
 
 	public static void main(String[] args) throws Exception{
 		/**
-		 * 场景1：setValue 加synchronized，getValue加synchronized  结果：会出现线程安全问题(脏读)
+		 * 场景1：setValue 加synchronized，getValue不加synchronized  结果：会出现线程安全问题(脏读)
 		 * 场景2：setValue 加synchronized，getValue加synchronized  结果：等执行setValue，才会执行 getValue，设值取值一致。
 		 *
 		 * 分析：

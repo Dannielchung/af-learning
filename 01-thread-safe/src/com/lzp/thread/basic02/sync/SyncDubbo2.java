@@ -1,7 +1,6 @@
 package com.lzp.thread.basic02.sync;
 /**
  * synchronized的重入
- * @author alienware
  *
  */
 public class SyncDubbo2 {

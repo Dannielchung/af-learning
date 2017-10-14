@@ -2,7 +2,6 @@ package com.lzp.thread.basic03.other;
 
 /**
  * 死锁问题，在设计程序时就应该避免双方相互持有对方的锁的情况
- * @author alienware
  *
  */
 public class DeadLock implements Runnable{

@@ -22,7 +22,7 @@ public class MyThread03 {
 	}
 	
 	/** synchronized */
-	public void method2(){
+	public synchronized void method2(){
 			System.out.println(Thread.currentThread().getName());
 	}
 	
