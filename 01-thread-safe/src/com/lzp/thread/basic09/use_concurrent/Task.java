@@ -4,6 +4,8 @@ public class Task implements Comparable<Task>{
 	
 	private int id ;
 	private String name;
+	private Object price;
+
 	public int getId() {
 		return id;
 	}
@@ -25,5 +27,8 @@ public class Task implements Comparable<Task>{
 	public String toString(){
 		return this.id + "," + this.name;
 	}
-	
+
+	public Object getPrice() {
+		return price;
+	}
 }
