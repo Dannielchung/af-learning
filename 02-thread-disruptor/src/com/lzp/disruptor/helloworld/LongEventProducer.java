@@ -9,12 +9,6 @@ import com.lmax.disruptor.RingBuffer;
  * 如果我们使用RingBuffer.next()获取一个事件槽，那么一定要发布对应的事件。
  * 如果不能发布事件，那么就会引起Disruptor状态的混乱。
  * 尤其是在多个事件生产者的情况下会导致事件消费者失速，从而不得不重启应用才能会恢复。
- * <B>系统名称：</B><BR>
- * <B>模块名称：</B><BR>
- * <B>中文类名：</B><BR>
- * <B>概要说明：</B><BR>
- * @author 北京尚学堂（alienware）
- * @since 2015年11月23日
  */
 public class LongEventProducer {
 
