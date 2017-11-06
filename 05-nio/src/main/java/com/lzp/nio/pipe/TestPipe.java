@@ -20,7 +20,9 @@ public class TestPipe {
 		buf.put("通过单向管道发送数据".getBytes());
 		buf.flip();
 		sinkChannel.write(buf);
-		
+
+
+
 		//3. 读取缓冲区中的数据
 		Pipe.SourceChannel sourceChannel = pipe.source();
 		buf.flip();
