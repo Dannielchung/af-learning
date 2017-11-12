@@ -25,7 +25,7 @@ public class Worker implements Runnable {
             //真正的处理业务逻辑
             Object output = handle(input);
 
-            this.resultMap.put(Integer.toString(input.getId()),output);
+            this.resultMap.put(Integer.toString(input.getId()), output);
         }
     }
 
@@ -41,7 +41,7 @@ public class Worker implements Runnable {
 //        return reObj;
 //    }
 
-    public Object handle(Task input){
+    public Object handle(Task input) {
         return null;
     }
 }

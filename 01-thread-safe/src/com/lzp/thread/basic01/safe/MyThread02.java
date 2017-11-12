@@ -1,63 +1,63 @@
 package com.lzp.thread.basic01.safe;
+
 /**
  * 结论：
- * 		1、对象锁：关键字synchronized取得的锁都是对象锁，而不是把一段代码（方法）当做锁，
- * 				  所以代码中哪个线程先执行synchronized关键字的方法，哪个线程就持有该方法所属对象的锁（Lock）
- *
- * 		2、类级别锁：在静态方法上加synchronized关键字，表示锁定.class类，类一级别的锁（独占.class类）
- *
+ * 1、对象锁：关键字synchronized取得的锁都是对象锁，而不是把一段代码（方法）当做锁，
+ * 所以代码中哪个线程先执行synchronized关键字的方法，哪个线程就持有该方法所属对象的锁（Lock）
+ * <p>
+ * 2、类级别锁：在静态方法上加synchronized关键字，表示锁定.class类，类一级别的锁（独占.class类）
  */
 public class MyThread02 {
 
-	private int num = 0;
-	
-	/** static */
-	public synchronized void printNum(String tag){
-		try {
-			
-			if(tag.equals("a")){
-				num = 100;
-				System.out.println("tag a, set num over!");
-				Thread.sleep(1000);
-			} else {
-				num = 200;
-				System.out.println("tag b, set num over!");
-			}
-			
-			System.out.println("tag " + tag + ", num = " + num);
-			
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	//注意观察run方法输出顺序
-	public static void main(String[] args) {
-		
-		//俩个不同的线程对象
-		final MyThread02 m1 = new MyThread02();
-		final MyThread02 m2 = new MyThread02();
-		
-		Thread t1 = new Thread(new Runnable() {
-			@Override
-			public void run() {
-				m1.printNum("a");
-			}
-		});
-		
-		Thread t2 = new Thread(new Runnable() {
-			@Override 
-			public void run() {
-				m2.printNum("b");
-			}
-		});		
-		
-		t1.start();
-		t2.start();
-		
-	}
-	
-	
-	
-	
+    private int num = 0;
+
+    /**
+     * static
+     */
+    public synchronized void printNum(String tag) {
+        try {
+
+            if (tag.equals("a")) {
+                num = 100;
+                System.out.println("tag a, set num over!");
+                Thread.sleep(1000);
+            } else {
+                num = 200;
+                System.out.println("tag b, set num over!");
+            }
+
+            System.out.println("tag " + tag + ", num = " + num);
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //注意观察run方法输出顺序
+    public static void main(String[] args) {
+
+        //俩个不同的线程对象
+        final MyThread02 m1 = new MyThread02();
+        final MyThread02 m2 = new MyThread02();
+
+        Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                m1.printNum("a");
+            }
+        });
+
+        Thread t2 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                m2.printNum("b");
+            }
+        });
+
+        t1.start();
+        t2.start();
+
+    }
+
+
 }

@@ -13,13 +13,13 @@ class Temp extends Thread {
 }
 
 public class ScheduledJob {
-	
+
     public static void main(String args[]) throws Exception {
-    
-    	Temp command = new Temp();
+
+        Temp command = new Temp();
         ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
-        
+
         ScheduledFuture<?> scheduleTask = scheduler.scheduleWithFixedDelay(command, 5, 1, TimeUnit.SECONDS);
-    
+
     }
 }

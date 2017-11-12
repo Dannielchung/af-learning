@@ -52,7 +52,7 @@ public class Master {
     public int getResult() {
         int ret = 0;
         for (Map.Entry<String, Object> me : resultMap.entrySet()) {
-            ret += (Integer)me.getValue();
+            ret += (Integer) me.getValue();
         }
         return ret;
     }

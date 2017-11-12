@@ -16,16 +16,19 @@ public class MyQueue {
     //3、容器上限和下限
     private final int minSize = 0;
     private final int maxSize;
+
     //4、构造方法指定容器的容量大小
     public MyQueue(int size) {
         this.maxSize = size;
     }
+
     //5、准备对象锁
     final Object lock = new Object();
+
     //6、put方法
     public void put(Object obj) {
         synchronized (lock) {
-            while(count.get() == this.maxSize){
+            while (count.get() == this.maxSize) {
                 try {
                     lock.wait();
                 } catch (InterruptedException e) {
@@ -34,7 +37,7 @@ public class MyQueue {
             }
             list.add(obj);
             count.incrementAndGet();
-            System.out.println("新加入的元素是："+obj);
+            System.out.println("新加入的元素是：" + obj);
             //容器有元素了，必须通知其他线程(唤醒)
             lock.notify();
         }
@@ -43,9 +46,9 @@ public class MyQueue {
     //7、take方法
     public Object take() {
         Object reObj = null;
-        synchronized (lock){
+        synchronized (lock) {
             // 判断,没有元素，则进入等待
-            while(count.get() == this.minSize) {
+            while (count.get() == this.minSize) {
                 try {
                     lock.wait();
                 } catch (InterruptedException e) {
@@ -53,7 +56,7 @@ public class MyQueue {
                 }
             }
             reObj = list.removeFirst();
-            System.out.println("新移除的元素是："+reObj);
+            System.out.println("新移除的元素是：" + reObj);
             count.decrementAndGet();
             //唤醒另外的线程
             lock.notify();
