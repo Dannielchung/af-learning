@@ -9,6 +9,8 @@ import lombok.*;
  * @Version V1.0
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
     private Long id;
     private String name;
