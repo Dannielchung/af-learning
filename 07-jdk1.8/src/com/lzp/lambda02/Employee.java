@@ -1,4 +1,4 @@
-package com.lzp.stream01;
+package com.lzp.lambda02;
 
 public class Employee {
 

@@ -1,5 +1,6 @@
 package com.lzp.stream01;
 
+import com.lzp.lambda02.Employee;
 import org.junit.Test;
 
 import java.util.ArrayList;
