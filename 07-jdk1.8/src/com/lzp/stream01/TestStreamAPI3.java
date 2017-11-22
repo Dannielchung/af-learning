@@ -44,6 +44,8 @@ public class TestStreamAPI3 {
 		System.out.println(str);
 	}
 
+
+
 	@Test
 	public void test10(){
 		DoubleSummaryStatistics dss = employees.stream()
@@ -62,6 +64,8 @@ public class TestStreamAPI3 {
 		System.out.println(map);
 	}
 
+
+
 	//多级分组
 	@Test
 	public void test8(){
@@ -79,6 +83,8 @@ public class TestStreamAPI3 {
 		System.out.println(map);
 	}
 
+
+
 	//分组
 	@Test
 	public void test7(){
@@ -87,6 +93,8 @@ public class TestStreamAPI3 {
 
 		System.out.println(map);
 	}
+
+
 
 	@Test
 	public void test6(){
@@ -116,6 +124,8 @@ public class TestStreamAPI3 {
 				 .collect(Collectors.minBy(Double::compare));
 		System.out.println(min.get());
 	}
+
+
 
 	@Test
 	public void test5(){
