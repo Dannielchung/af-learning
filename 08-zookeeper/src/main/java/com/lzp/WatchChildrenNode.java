@@ -51,14 +51,13 @@ public class WatchChildrenNode {
     public void createNode(String nodePath,String nodeValue) throws KeeperException, InterruptedException {
         //String path, byte[] data, List<ACL> acl, CreateMode createMode
         zk.create(nodePath,nodeValue.getBytes(), Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+
     }
 
 
     public static void main(String[] args) throws IOException, KeeperException, InterruptedException {
         WatchChildrenNode watchChildrenNode = new WatchChildrenNode();
-
         watchChildrenNode.setZk(watchChildrenNode.startZK());
-
         Thread.sleep(Long.MAX_VALUE);
     }
 
