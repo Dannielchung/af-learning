@@ -54,13 +54,11 @@ public class WatchChildrenNode {
 
     }
 
-
     public static void main(String[] args) throws IOException, KeeperException, InterruptedException {
         WatchChildrenNode watchChildrenNode = new WatchChildrenNode();
         watchChildrenNode.setZk(watchChildrenNode.startZK());
         Thread.sleep(Long.MAX_VALUE);
     }
-
 
     public ZooKeeper getZk() {
         return zk;
