@@ -100,7 +100,6 @@ public class WatchMore {
         Thread.sleep(Long.MAX_VALUE);
     }
 
-
     public ZooKeeper getZk() {
         return zk;
     }
